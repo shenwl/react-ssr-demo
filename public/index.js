@@ -226,7 +226,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _Home = __webpack_require__(/*! ../views/Home */ \"./src/views/Home/index.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// 同构不能用render，要用hydrate\n_reactDom2.default.hydrate(_react2.default.createElement(_Home2.default, null), document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/client/index.js?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _Home = __webpack_require__(/*! ../views/Home */ \"./src/views/Home/index.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// 同构：一套react代码，在服务器端执行一次，在客户端再执行一次\n// 同构不能用render，要用hydrate\n_reactDom2.default.hydrate(_react2.default.createElement(_Home2.default, null), document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/client/index.js?");
 
 /***/ }),
 

@@ -1,9 +1,7 @@
-// 同构：一套react代码，在服务器端执行一次，在客户端再执行一次
-
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Home from './views/Home';
+import Home from '../views/Home/index';
 
 const app = express();
 app.use(express.static('public'));
