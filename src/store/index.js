@@ -1,10 +1,10 @@
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
+import {reducer as homeReducer} from '../views/Home/store';
 
-
-const reducer = (state = {name: 'allen'}, action) => {
-  return state;
-};
+const reducer = combineReducers({
+  home: homeReducer
+});
 
 const getStore = () => {
   return createStore(reducer, applyMiddleware(thunk));

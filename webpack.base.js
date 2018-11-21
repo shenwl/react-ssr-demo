@@ -1,5 +1,17 @@
+const path = require('path');
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
+
 module.exports = {
   mode: 'development',
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      '@': resolve('src')
+    }
+  },
   module: {
     rules: [
       {
