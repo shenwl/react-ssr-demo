@@ -6,9 +6,15 @@ export default [
   {
     path: '/',
     component: Home,
-    exact: true,
-    // loadData: () => Home.loadData(),
+    // exact: true,
+    loadData: () => Home.loadData(),
     key: 'home',
+    routes: [{
+      path: '/test',
+      component: Login,
+      exact: true,
+      key: 'test'
+    }]
   },
   {
     path: '/login',

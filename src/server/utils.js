@@ -1,6 +1,7 @@
 import React from "react";
 import {renderToString} from "react-dom/server";
 import {StaticRouter, Route} from "react-router-dom";
+import {matchRoutes} from 'react-router-config';
 import {Provider} from 'react-redux';
 import getStore from '../store';
 import routes from "../router";
@@ -8,6 +9,11 @@ import routes from "../router";
 
 export const render = (req) => {
   const store = getStore();
+
+  const matchedRoutes = matchRoutes(routes, req.path);
+
+
+  console.log(matchedRoutes);
 
   const content = renderToString((
     <Provider store={store}>
