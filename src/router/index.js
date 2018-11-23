@@ -8,13 +8,7 @@ export default [
     component: Home,
     // exact: true,
     loadData: () => Home.loadData(),
-    key: 'home',
-    routes: [{
-      path: '/test',
-      component: Login,
-      exact: true,
-      key: 'test'
-    }]
+    key: 'home'
   },
   {
     path: '/login',
