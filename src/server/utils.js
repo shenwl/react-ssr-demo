@@ -15,6 +15,7 @@ export const render = (store, routes, req) => {
     </Provider>
   ));
 
+  // 数据注水，将state放入window.context
   return `
     <html>
       <head>
