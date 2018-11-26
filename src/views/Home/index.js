@@ -28,6 +28,7 @@ class Home extends Component {
 
   // componentDidMount 在服务器端不执行
   componentDidMount() {
+    if(this.props.list.length > 0) return;
     this.props.getHomeList();
   }
 }
