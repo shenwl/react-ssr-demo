@@ -1,7 +1,7 @@
 import express from 'express';
 import React from 'react';
 import {render} from './utils';
-import getStore from '../store';
+import {getStore} from '../store';
 import {matchRoutes} from 'react-router-config';
 import routes from "@/router";
 
