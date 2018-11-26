@@ -8,7 +8,7 @@ const changeList = (list) => ({
 
 export const getHomeList = () => {
   return (dispatch) => {
-    fetch('/news.json').then(res => {
+    return fetch('/news.json').then(res => {
       if (res.success) {
         const list = res.data;
         dispatch(changeList(list));

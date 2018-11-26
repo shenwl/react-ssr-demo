@@ -6,8 +6,8 @@ export default [
   {
     path: '/',
     component: Home,
-    // exact: true,
-    loadData: () => Home.loadData(),
+    exact: true,
+    loadData: Home.loadData,
     key: 'home'
   },
   {
