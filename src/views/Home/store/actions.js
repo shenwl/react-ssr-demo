@@ -1,4 +1,5 @@
-import fetch from '@/modules/fetch';
+import clientFetch from '@/modules/clientFetch';
+import serverFetch from '@/modules/serverFetch';
 import {CHANGE_HOME_LIST} from './constants';
 
 const changeList = (list) => ({
@@ -6,9 +7,12 @@ const changeList = (list) => ({
   list,
 });
 
-export const getHomeList = () => {
+export const getHomeList = (isServer) => {
+
+  const request = isServer ? serverFetch : clientFetch;
+
   return (dispatch) => {
-    return fetch('/news.json').then(res => {
+    return request('/api/news.json').then(res => {
       if (res.success) {
         const list = res.data;
         dispatch(changeList(list));

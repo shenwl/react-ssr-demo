@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const devHost = '/api';
-axios.defaults.baseURL = devHost;
+const instance = axios.create({
+  baseURL: 'http://47.95.113.63/ssr/'
+});
 
-
-export default function fetch(url, data = {}, type = 'GET') {
+export default (url, data = {}, type = 'GET') => {
   return new Promise((resolve, reject) => {
     let option = {
       url: url,
@@ -21,7 +21,7 @@ export default function fetch(url, data = {}, type = 'GET') {
     } else {
       option.data = data;
     }
-    axios(option).then((res) => {
+    instance(option).then((res) => {
       if (res.status === 200) {
         resolve(res.data);
       } else {

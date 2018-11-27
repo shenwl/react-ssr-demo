@@ -17,18 +17,17 @@ app.use('/api', proxy('http://47.95.113.63', {
 
 app.get('*', (req, res) => {
   const store = getStore();
-  // const matchedRoutes = matchRoutes(routes, req.path);
+  const matchedRoutes = matchRoutes(routes, req.path);
 
   // 让matchedRoutes里面所有的组件对应的loadData方法执行一遍
-  // const promises = [];
-  // matchedRoutes.forEach(item => {
-  //   item.route.loadData && promises.push(item.route.loadData(store));
-  // });
+  const promises = [];
+  matchedRoutes.forEach(item => {
+    item.route.loadData && promises.push(item.route.loadData(store));
+  });
 
-  // Promise.all(promises).then(() => {
-  //   res.send(render(store, routes, req));
-  // });
-  res.send(render(store, routes, req));
+  Promise.all(promises).then(() => {
+    res.send(render(store, routes, req));
+  });
 });
 
 
