@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const devHost = 'http://47.95.113.63/ssr/api';
+const devHost = '/api';
 axios.defaults.baseURL = devHost;
 
 
