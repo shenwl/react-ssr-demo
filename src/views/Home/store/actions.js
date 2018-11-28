@@ -7,11 +7,8 @@ const changeList = (list) => ({
   list,
 });
 
-export const getHomeList = (isServer) => {
-
-  const request = isServer ? serverFetch : clientFetch;
-
-  return (dispatch) => {
+export const getHomeList = () => {
+  return (dispatch, getState, request) => {
     return request('/api/news.json').then(res => {
       if (res.success) {
         const list = res.data;
