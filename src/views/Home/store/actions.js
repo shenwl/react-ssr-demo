@@ -1,5 +1,3 @@
-import clientFetch from '@/modules/clientFetch';
-import serverFetch from '@/modules/serverFetch';
 import {CHANGE_HOME_LIST} from './constants';
 
 const changeList = (list) => ({
