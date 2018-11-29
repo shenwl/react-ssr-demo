@@ -15,7 +15,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header/>
         {this.getList()}
         <div>react ssr demo</div>
         <button onClick={() => {
